@@ -33,4 +33,27 @@ This is a complete DevOps project designed for learning and practice from **Fres
 ---
 
 ## 📁 Folder Structure
-
+devops-pipeline-flask-app/
+│
+├── app/ # Flask App
+│ ├── app.py
+│ ├── requirements.txt
+│ └── Dockerfile
+│
+├── jenkins/ # Jenkins Pipeline
+│ └── Jenkinsfile
+│
+├── k8s/ # Kubernetes Deployment
+│ ├── deployment.yaml
+│ ├── service.yaml
+│ └── ingress.yaml (optional)
+│
+├── monitoring/ # Prometheus + Grafana
+│ ├── prometheus.yaml
+│ └── grafana-dashboards/
+│ └── dashboard.json
+│
+├── terraform/ (optional) # Cloud Infra Provisioning
+│ └── main.tf
+│
+└── README.md # You're here 😄
