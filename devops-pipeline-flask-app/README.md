@@ -91,16 +91,17 @@ Stages:
 ☸️ Kubernetes Deployment
 
 Apply the Kubernetes manifests:
+
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
+
 Access service:
+
 kubectl get svc flask-service
 
  📊 Monitoring with Prometheus & Grafana
 
 Launch Prometheus with prometheus.yaml.
-
 Import dashboard.json into Grafana.
-
 Monitor Flask app metrics.
 **
