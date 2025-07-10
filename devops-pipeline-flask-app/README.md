@@ -83,6 +83,7 @@ Set DockerHub credentials as dockerhub-creds.
 Use the jenkins/Jenkinsfile in a Jenkins Pipeline job.
 
 Stages:
+
 #1 Clone repo
 #2 Build Docker image
 #3 Run tests
