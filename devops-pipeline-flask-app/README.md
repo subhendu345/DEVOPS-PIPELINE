@@ -71,7 +71,7 @@ cd app
 pip install -r requirements.txt
 python app.py
 
-## 🐳 Dockerize Flask App
+ 🐳 Dockerize Flask App
 
 docker build -t flask-devops:latest ./app
 docker run -p 5000:5000 flask-devops:latest
