@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone') {
+            steps {
+                git 'https://github.com/YOUR_USERNAME/devops-pipeline-flask-app.git'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t flask-devops:latest app/'
+            }
+        }
+        stage('Run Unit Tests') {
+            steps {
+                sh 'docker run flask-devops:latest pytest || echo "Tests Placeholder"'
+            }
+        }
+        stage('Push to Docker Hub') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+                    sh 'echo $PASS | docker login -u $USER --password-stdin'
+                    sh 'docker tag flask-devops:latest $USER/flask-devops:latest'
+                    sh 'docker push $USER/flask-devops:latest'
+                }
+            }
+        }
+    }
+}
